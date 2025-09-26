@@ -64,3 +64,4 @@ def get_random_dino_desc():
         
     except requests.RequestException as e:
         print(f"Problem fetching dinos: {e}")
+print("jrngkihbsvkhsb")
