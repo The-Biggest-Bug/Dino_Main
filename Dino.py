@@ -53,4 +53,14 @@ def get_random_dino_name():
 
 
 def get_random_dino_desc():
-    
+    try:
+        response = requests.get(DINOSAUR_RANDOM_DESC)
+        dinos = response.json()
+        print("This is a random dinosaur description: ")
+        for dino in dinos:
+            desc = dino.get("Description", "Unknown")
+
+            print(f"Name: {desc}")
+        
+    except requests.RequestException as e:
+        print(f"Problem fetching dinos: {e}")
